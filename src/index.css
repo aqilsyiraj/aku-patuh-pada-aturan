@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom cheerful animations */
+@keyframes eyeBlink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.animate-blink {
+  animation: eyeBlink 3.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes armWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(15deg);
+  }
+}
+
+.animate-arm-wave {
+  animation: armWave 2s infinite ease-in-out;
+  transform-origin: 30% 70%;
+}
+
+@keyframes clap {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+.animate-clap {
+  animation: clap 0.6s infinite ease-in-out;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-12px) translateX(4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.8;
+  }
+}
+
+.animate-bubble {
+  animation: bubbleFloat 3s infinite ease-in-out;
+}
+
+@keyframes sweepMotion {
+  0%, 100% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotate(-18deg) translateX(-10px);
+  }
+}
+
+.animate-sweep {
+  animation: sweepMotion 1.4s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+@keyframes waterPour {
+  0% {
+    stroke-dashoffset: 20;
+    opacity: 0.2;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -20;
+    opacity: 0.2;
+  }
+}
+
+.animate-water {
+  stroke-dasharray: 6 4;
+  animation: waterPour 0.8s infinite linear;
+}
+
+/* Card bouncy hover */
+.kid-card {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.kid-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.kid-button {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.kid-button:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+.kid-button:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Print styling for Certificate */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-certificate, #printable-certificate * {
+    visibility: visible;
+  }
+  #printable-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+}
