@@ -35,227 +35,293 @@ export default function Materi1Keluarga({ onNext, onPrev }) {
     }
   };
 
-  // Render dedicated SVG animated scenes for morning, afternoon, evening, night
+  // Render animasi 2D yang sederhana, rapi, proporsional, dan sangat jelas
   const renderSceneAnimation = (type) => {
     switch (type) {
       case 'morning':
         return (
-          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-amber-200 via-orange-100 to-amber-50 overflow-hidden border-2 border-amber-300 flex items-center justify-center p-4">
-            <svg viewBox="0 0 500 300" className="w-full h-full">
-              {/* Sun Rising with glowing rays */}
-              <g className="animate-bounce-gentle">
-                <circle cx="100" cy="90" r="42" fill="#FBBF24" />
-                <circle cx="100" cy="90" r="34" fill="#FDE047" />
-                <path d="M 100 35 L 100 20 M 100 145 L 100 160 M 45 90 L 30 90 M 155 90 L 170 90" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
+          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-amber-100 via-orange-50 to-sky-50 overflow-hidden border-2 border-amber-300 flex items-center justify-center p-3">
+            <svg viewBox="0 0 450 260" className="w-full h-full">
+              {/* Dinding & Lantai Kamar */}
+              <rect x="0" y="0" width="450" height="200" fill="#FEF9C3" opacity="0.6" />
+              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
+              <line x1="0" y1="200" x2="450" y2="200" stroke="#CBD5E1" strokeWidth="3" />
+
+              {/* Jendela Pagi dengan Matahari Terbit */}
+              <g transform="translate(30, 20)">
+                <rect x="0" y="0" width="80" height="90" rx="8" fill="#BAE6FD" stroke="#0284C7" strokeWidth="4" />
+                <line x1="40" y1="0" x2="40" y2="90" stroke="#0284C7" strokeWidth="3" />
+                <line x1="0" y1="45" x2="80" y2="45" stroke="#0284C7" strokeWidth="3" />
+                {/* Matahari Tersenyum */}
+                <circle cx="40" cy="45" r="22" fill="#FDE047" stroke="#F59E0B" strokeWidth="2" className="animate-spin" style={{ animationDuration: '25s', transformOrigin: '40px 45px' }} />
+                <circle cx="34" cy="42" r="2" fill="#78350F" />
+                <circle cx="46" cy="42" r="2" fill="#78350F" />
+                <path d="M 36 49 Q 40 53 44 49" stroke="#78350F" strokeWidth="1.5" fill="none" />
               </g>
 
-              {/* Window Frame */}
-              <rect x="50" y="30" width="100" height="120" rx="8" fill="none" stroke="#78350F" strokeWidth="6" />
-              <line x1="100" y1="30" x2="100" y2="150" stroke="#78350F" strokeWidth="4" />
-              <line x1="50" y1="90" x2="150" y2="90" stroke="#78350F" strokeWidth="4" />
-
-              {/* Bedroom Floor */}
-              <rect x="0" y="240" width="500" height="60" fill="#E2E8F0" />
-              
-              {/* Bed with Neat Blanket */}
-              <g transform="translate(180, 140)">
-                {/* Headboard */}
-                <rect x="10" y="20" width="18" height="90" rx="6" fill="#92400E" />
-                {/* Mattress */}
-                <rect x="25" y="55" width="160" height="45" rx="8" fill="#38BDF8" stroke="#0284C7" strokeWidth="3" />
-                {/* Pillows */}
-                <rect x="35" y="38" width="40" height="25" rx="6" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
-                {/* Neat folded blanket */}
-                <rect x="80" y="55" width="105" height="45" rx="8" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
-                {/* Sparkles of tidiness */}
-                <polygon points="175,35 178,43 186,45 180,50 181,58 175,54 169,58 170,50 164,45 172,43" fill="#FACC15" className="animate-ping" style={{ animationDuration: '3s' }} />
+              {/* Tempat Tidur Rapi (Kasur, Bantal, Selimut Terlipat) */}
+              <g transform="translate(130, 95)">
+                {/* Sandaran Kasur (Headboard) */}
+                <rect x="0" y="10" width="16" height="95" rx="6" fill="#92400E" />
+                {/* Rangka & Kasur */}
+                <rect x="14" y="55" width="160" height="40" rx="8" fill="#38BDF8" stroke="#0284C7" strokeWidth="3" />
+                {/* Kaki Tempat Tidur */}
+                <rect x="25" y="95" width="10" height="15" fill="#78350F" rx="2" />
+                <rect x="155" y="95" width="10" height="15" fill="#78350F" rx="2" />
+                {/* Bantal Putih Bersih */}
+                <rect x="24" y="42" width="40" height="24" rx="6" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="2" />
+                {/* Selimut yang Sudah Dirapikan Rapi */}
+                <rect x="70" y="55" width="104" height="40" rx="6" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
+                {/* Bintang Kilau Kerapian */}
+                <g className="animate-pulse" style={{ animationDuration: '2s' }}>
+                  <polygon points="160,35 163,42 170,43 165,48 166,55 160,52 154,55 155,48 150,43 157,42" fill="#FACC15" />
+                </g>
               </g>
 
-              {/* Cheerful Child standing up after making bed */}
-              <g transform="translate(380, 145)" className="animate-bounce-gentle">
-                {/* Child Head */}
-                <circle cx="35" cy="30" r="22" fill="#FED7AA" stroke="#EA580C" strokeWidth="2" />
-                <circle cx="28" cy="27" r="3" fill="#1E293B" />
-                <circle cx="42" cy="27" r="3" fill="#1E293B" />
-                <path d="M 30 38 Q 35 44 40 38" stroke="#991B1B" strokeWidth="2" fill="none" />
-                {/* Pajama / Morning clothes */}
-                <rect x="18" y="52" width="34" height="45" rx="8" fill="#FBBF24" stroke="#D97706" strokeWidth="2" />
-                {/* Arms raising happily */}
-                <path d="M 18 60 Q 5 45 10 35" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" fill="none" />
-                <path d="M 52 60 Q 65 45 60 35" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" fill="none" />
-                {/* Legs */}
-                <rect x="22" y="97" width="10" height="22" rx="4" fill="#0284C7" />
-                <rect x="38" y="97" width="10" height="22" rx="4" fill="#0284C7" />
-              </g>
-
-              {/* Breakfast Tray on Table */}
-              <g transform="translate(20, 190)">
-                <rect x="10" y="35" width="80" height="30" rx="4" fill="#A16207" />
-                <ellipse cx="50" cy="33" rx="30" ry="10" fill="#FEF08A" stroke="#CA8A04" strokeWidth="2" />
-                {/* Glass of milk & toast */}
-                <rect x="30" y="16" width="14" height="20" rx="3" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1.5" />
-                <circle cx="58" cy="26" r="8" fill="#FB923C" />
+              {/* Karakter Anak Rapi - Berdiri Tersenyum Merapikan Tempat Tidur */}
+              <g transform="translate(325, 95)" className="animate-bounce-gentle">
+                {/* Sepatu */}
+                <ellipse cx="22" cy="115" rx="10" ry="6" fill="#0284C7" />
+                <ellipse cx="44" cy="115" rx="10" ry="6" fill="#0284C7" />
+                {/* Kaki Celana */}
+                <rect x="16" y="85" width="12" height="28" rx="4" fill="#0369A1" />
+                <rect x="38" y="85" width="12" height="28" rx="4" fill="#0369A1" />
+                {/* Baju Kaos Pagi Kuning */}
+                <rect x="12" y="45" width="42" height="42" rx="10" fill="#FACC15" stroke="#EAB308" strokeWidth="2.5" />
+                {/* Tangan Kiri Merapikan Kasur */}
+                <path d="M 12 55 L -15 65" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" />
+                <circle cx="-15" cy="65" r="5" fill="#FED7AA" />
+                {/* Tangan Kanan Mengacungkan Jempol Ceria */}
+                <path d="M 54 55 Q 70 48 68 38" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" fill="none" />
+                <circle cx="68" cy="38" r="5.5" fill="#FED7AA" />
+                {/* Leher */}
+                <rect x="28" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                {/* Kepala Anak */}
+                <circle cx="33" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                {/* Rambut Cokelat Rapi */}
+                <path d="M 14 22 C 14 6 52 6 52 22 Q 44 14 33 14 Q 22 14 14 22 Z" fill="#78350F" />
+                {/* Mata & Pipi */}
+                <circle cx="27" cy="23" r="2.5" fill="#1E293B" />
+                <circle cx="39" cy="23" r="2.5" fill="#1E293B" />
+                <ellipse cx="22" cy="29" rx="4" ry="2.5" fill="#F87171" opacity="0.7" />
+                <ellipse cx="44" cy="29" rx="4" ry="2.5" fill="#F87171" opacity="0.7" />
+                {/* Senyum Bahagia */}
+                <path d="M 29 29 Q 33 35 37 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
             </svg>
-            <div className="absolute bottom-2 left-4 px-3 py-1 bg-white/90 rounded-full text-xs font-bubble font-bold text-amber-800 shadow-xs">
-              ☀️ Bangun pagi, rapikan tempat tidur & sarapan
+            <div className="absolute bottom-2 left-3 px-3 py-1 bg-white/95 rounded-full text-xs font-bubble font-bold text-amber-900 border border-amber-300 shadow-xs">
+              ☀️ Bangun Pagi & Merapikan Tempat Tidur Sendiri
             </div>
           </div>
         );
 
       case 'afternoon':
         return (
-          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-sky-200 via-sky-100 to-blue-50 overflow-hidden border-2 border-sky-300 flex items-center justify-center p-4">
-            <svg viewBox="0 0 500 300" className="w-full h-full">
-              {/* Floor */}
-              <rect x="0" y="240" width="500" height="60" fill="#CBD5E1" />
+          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-sky-100 via-blue-50 to-emerald-50 overflow-hidden border-2 border-sky-300 flex items-center justify-center p-3">
+            <svg viewBox="0 0 450 260" className="w-full h-full">
+              {/* Dinding & Lantai */}
+              <rect x="0" y="0" width="450" height="200" fill="#F0F9FF" />
+              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
+              <line x1="0" y1="200" x2="450" y2="200" stroke="#CBD5E1" strokeWidth="3" />
 
-              {/* School Bag hung on neat rack */}
-              <g transform="translate(60, 80)">
-                <rect x="0" y="0" width="12" height="160" fill="#78350F" rx="4" />
-                <circle cx="6" cy="30" r="7" fill="#B45309" />
-                {/* Blue School Backpack */}
-                <rect x="12" y="25" width="55" height="70" rx="12" fill="#0284C7" stroke="#0369A1" strokeWidth="3" />
-                <rect x="25" y="45" width="30" height="35" rx="6" fill="#38BDF8" />
+              {/* Tas Sekolah Tergantung Rapi di Samping */}
+              <g transform="translate(35, 40)">
+                <circle cx="15" cy="15" r="5" fill="#78350F" />
+                <rect x="13" y="15" width="4" height="20" fill="#78350F" />
+                {/* Ransel Sekolah Biru */}
+                <rect x="-5" y="35" width="40" height="52" rx="10" fill="#0284C7" stroke="#0369A1" strokeWidth="2.5" />
+                <rect x="3" y="50" width="24" height="25" rx="6" fill="#38BDF8" />
+                <text x="5" y="105" fill="#0369A1" fontSize="10" fontWeight="bold">Tas Sekolah</text>
               </g>
 
-              {/* Hand Washing Sink with Faucet and Flowing Water */}
-              <g transform="translate(200, 110)">
-                {/* Mirror */}
-                <rect x="30" y="5" width="50" height="55" rx="8" fill="#E0F2FE" stroke="#0284C7" strokeWidth="3" />
-                {/* Faucet */}
-                <path d="M 55 58 L 55 70 Q 55 82 45 82" stroke="#64748B" strokeWidth="6" strokeLinecap="round" fill="none" />
-                {/* Flowing Water stream */}
-                <line x1="45" y1="84" x2="45" y2="120" stroke="#38BDF8" strokeWidth="5" strokeLinecap="round" className="animate-water" />
-                {/* Sink Basin */}
-                <rect x="15" y="115" width="80" height="35" rx="14" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="3" />
-                <rect x="45" y="148" width="20" height="45" fill="#E2E8F0" />
-                {/* Soap Bar */}
-                <rect x="80" y="105" width="22" height="12" rx="4" fill="#F472B6" />
-                {/* Bubbles */}
-                <circle cx="35" cy="98" r="6" fill="#BAE6FD" opacity="0.8" className="animate-bubble" />
-                <circle cx="58" cy="90" r="5" fill="#BAE6FD" opacity="0.8" className="animate-bubble" style={{ animationDelay: '0.4s' }} />
+              {/* Wastafel Cuci Tangan dengan Kran & Air Mengalir */}
+              <g transform="translate(140, 75)">
+                {/* Cermin di Dinding */}
+                <rect x="35" y="0" width="60" height="65" rx="10" fill="#E0F2FE" stroke="#0284C7" strokeWidth="3" />
+                <line x1="45" y1="12" x2="75" y2="12" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
+
+                {/* Kran Air Logam */}
+                <path d="M 65 60 L 65 78 Q 65 90 52 90" stroke="#64748B" strokeWidth="6" strokeLinecap="round" fill="none" />
+                
+                {/* Aliran Air Jernih Mengucur */}
+                <line x1="52" y1="92" x2="52" y2="128" stroke="#38BDF8" strokeWidth="5" strokeLinecap="round" className="animate-water" />
+
+                {/* Bak Wastafel Putih Bersih */}
+                <rect x="10" y="125" width="110" height="36" rx="14" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="3" />
+                <rect x="55" y="160" width="20" height="40" fill="#CBD5E1" />
+
+                {/* Sabun Cuci Tangan Batang Merah Muda */}
+                <rect x="90" y="115" width="24" height="12" rx="4" fill="#F472B6" stroke="#DB2777" strokeWidth="1" />
+                <text x="92" y="124" fill="#FFFFFF" fontSize="8" fontWeight="bold">SABUN</text>
+
+                {/* Gelembung Sabun Busa Bersih */}
+                <circle cx="42" cy="110" r="7" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" />
+                <circle cx="68" cy="104" r="5.5" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" style={{ animationDelay: '0.4s' }} />
+                <circle cx="56" cy="98" r="4" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" style={{ animationDelay: '0.8s' }} />
               </g>
 
-              {/* Polite Child Eating Lunch */}
-              <g transform="translate(360, 130)">
-                {/* Dining Chair & Table */}
-                <rect x="10" y="60" width="70" height="50" rx="4" fill="#D97706" />
-                {/* Plate with food */}
-                <ellipse cx="45" cy="58" rx="24" ry="7" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
-                <circle cx="45" cy="56" r="6" fill="#22C55E" />
-                {/* Child Sitting Politely */}
-                <circle cx="45" cy="18" r="16" fill="#FED7AA" stroke="#EA580C" strokeWidth="2" />
-                <circle cx="40" cy="16" r="2.5" fill="#1E293B" />
-                <circle cx="50" cy="16" r="2.5" fill="#1E293B" />
-                <path d="M 41 24 Q 45 28 49 24" stroke="#991B1B" strokeWidth="2" fill="none" />
-                <rect x="30" y="34" width="30" height="35" rx="6" fill="#10B981" />
+              {/* Karakter Anak Sedang Mencuci Tangan dengan Busa */}
+              <g transform="translate(285, 95)" className="animate-bounce-gentle">
+                {/* Sepatu */}
+                <ellipse cx="22" cy="115" rx="10" ry="6" fill="#1E293B" />
+                <ellipse cx="44" cy="115" rx="10" ry="6" fill="#1E293B" />
+                {/* Kaki Celana Seragam */}
+                <rect x="16" y="85" width="12" height="28" rx="4" fill="#DC2626" />
+                <rect x="38" y="85" width="12" height="28" rx="4" fill="#DC2626" />
+                {/* Baju Putih Sekolah */}
+                <rect x="12" y="45" width="42" height="42" rx="10" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2.5" />
+                {/* Kedua Tangan Menjangkau Wastafel Menggosok Sabun */}
+                <path d="M 12 55 L -65 95" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" />
+                <path d="M 25 58 L -55 98" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" />
+                {/* Gumpalan Busa di Tangan */}
+                <circle cx="-65" cy="98" r="8" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
+                <circle cx="-55" cy="100" r="7" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
+                {/* Leher */}
+                <rect x="28" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                {/* Kepala Anak Menghadap Wastafel */}
+                <circle cx="33" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                {/* Rambut Rapi */}
+                <path d="M 14 22 C 14 6 52 6 52 22 Q 44 14 33 14 Q 22 14 14 22 Z" fill="#78350F" />
+                {/* Mata & Senyum */}
+                <circle cx="26" cy="23" r="2.5" fill="#1E293B" />
+                <circle cx="38" cy="23" r="2.5" fill="#1E293B" />
+                <ellipse cx="22" cy="29" rx="4" ry="2" fill="#F87171" opacity="0.7" />
+                <path d="M 28 29 Q 32 35 36 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
             </svg>
-            <div className="absolute bottom-2 left-4 px-3 py-1 bg-white/90 rounded-full text-xs font-bubble font-bold text-sky-800 shadow-xs">
-              🧼 Pulang sekolah, cuci tangan & makan tertib
+            <div className="absolute bottom-2 left-3 px-3 py-1 bg-white/95 rounded-full text-xs font-bubble font-bold text-sky-900 border border-sky-300 shadow-xs">
+              🧼 Pulang Sekolah Langsung Cuci Tangan Pakai Sabun
             </div>
           </div>
         );
 
       case 'evening':
         return (
-          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-emerald-100 via-teal-50 to-amber-50 overflow-hidden border-2 border-emerald-300 flex items-center justify-center p-4">
-            <svg viewBox="0 0 500 300" className="w-full h-full">
-              {/* Sunset Window */}
-              <rect x="40" y="30" width="90" height="110" rx="6" fill="#FDE68A" stroke="#92400E" strokeWidth="4" />
-              <circle cx="85" cy="85" r="25" fill="#F97316" />
+          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-orange-100 via-amber-50 to-emerald-50 overflow-hidden border-2 border-emerald-300 flex items-center justify-center p-3">
+            <svg viewBox="0 0 450 260" className="w-full h-full">
+              {/* Dinding & Lantai */}
+              <rect x="0" y="0" width="450" height="200" fill="#FEF3C7" opacity="0.6" />
+              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
+              <line x1="0" y1="200" x2="450" y2="200" stroke="#CBD5E1" strokeWidth="3" />
 
-              {/* Floor */}
-              <rect x="0" y="240" width="500" height="60" fill="#E2E8F0" />
-
-              {/* Toy Storage Chest with tidy toys */}
-              <g transform="translate(60, 140)">
-                <rect x="0" y="40" width="110" height="65" rx="8" fill="#F59E0B" stroke="#B45309" strokeWidth="3" />
-                <rect x="-5" y="30" width="120" height="15" rx="4" fill="#D97706" />
-                {/* Teddy Bear & Ball inside */}
-                <circle cx="35" cy="25" r="14" fill="#92400E" />
-                <circle cx="28" cy="14" r="5" fill="#78350F" />
-                <circle cx="42" cy="14" r="5" fill="#78350F" />
-                <circle cx="75" cy="25" r="12" fill="#EF4444" />
+              {/* Kotak Mainan Besar Rapi (Tertulis KOTAK MAINAN) */}
+              <g transform="translate(60, 110)">
+                {/* Badan Kotak Mainan */}
+                <rect x="0" y="25" width="130" height="65" rx="10" fill="#F59E0B" stroke="#B45309" strokeWidth="3.5" />
+                {/* Tutup Kotak yang Terbuka */}
+                <rect x="-6" y="15" width="142" height="14" rx="5" fill="#D97706" />
+                <text x="18" y="62" fill="#78350F" fontSize="12" fontWeight="bold">KOTAK MAINAN</text>
+                {/* Boneka Beruang & Balok di Dalam Kotak */}
+                <circle cx="35" cy="14" r="14" fill="#92400E" />
+                <circle cx="28" cy="4" r="5" fill="#78350F" />
+                <circle cx="42" cy="4" r="5" fill="#78350F" />
+                <circle cx="32" cy="12" r="2" fill="#FFFFFF" />
+                <circle cx="38" cy="12" r="2" fill="#FFFFFF" />
+                <rect x="80" y="8" width="22" height="20" rx="3" fill="#10B981" />
               </g>
 
-              {/* Child with Broom sweeping floor */}
-              <g transform="translate(240, 115)" className="animate-sweep">
-                {/* Child Head */}
-                <circle cx="30" cy="25" r="20" fill="#FED7AA" stroke="#EA580C" strokeWidth="2" />
-                <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                <path d="M 26 32 Q 30 36 34 32" stroke="#991B1B" strokeWidth="2" fill="none" />
-                {/* Body */}
-                <rect x="15" y="45" width="30" height="45" rx="6" fill="#8B5CF6" />
-                {/* Broom in Hands */}
-                <line x1="10" y1="45" x2="-10" y2="125" stroke="#A16207" strokeWidth="5" strokeLinecap="round" />
-                {/* Broom Straw Bristles */}
-                <polygon points="-25,125 5,125 -5,100 -15,100" fill="#FBBF24" stroke="#D97706" strokeWidth="2" />
+              {/* Karakter Anak Memasukkan Bola Mainan ke Dalam Kotak */}
+              <g transform="translate(255, 95)" className="animate-bounce-gentle">
+                {/* Sepatu */}
+                <ellipse cx="22" cy="115" rx="10" ry="6" fill="#10B981" />
+                <ellipse cx="44" cy="115" rx="10" ry="6" fill="#10B981" />
+                {/* Celana Pendek Santai */}
+                <rect x="16" y="85" width="12" height="28" rx="4" fill="#0284C7" />
+                <rect x="38" y="85" width="12" height="28" rx="4" fill="#0284C7" />
+                {/* Kaos Hijau Mint */}
+                <rect x="12" y="45" width="42" height="42" rx="10" fill="#34D399" stroke="#059669" strokeWidth="2.5" />
+                
+                {/* Tangan Kiri Menjangkau ke Kotak Memegang Bola Merah */}
+                <path d="M 12 55 L -45 60" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" />
+                {/* Bola Mainan Merah Terlihat Jelas */}
+                <circle cx="-50" cy="60" r="13" fill="#EF4444" stroke="#B91C1C" strokeWidth="2" className="animate-bounce" />
+                <path d="M -56 56 Q -50 64 -44 56" stroke="#FFFFFF" strokeWidth="2" fill="none" />
+
+                {/* Tangan Kanan di Pinggang Ceria */}
+                <path d="M 54 55 Q 64 68 54 75" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" fill="none" />
+
+                {/* Leher & Kepala */}
+                <rect x="28" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                <circle cx="33" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                {/* Rambut Rapi */}
+                <path d="M 14 22 C 14 6 52 6 52 22 Q 44 14 33 14 Q 22 14 14 22 Z" fill="#78350F" />
+                <circle cx="27" cy="23" r="2.5" fill="#1E293B" />
+                <circle cx="39" cy="23" r="2.5" fill="#1E293B" />
+                <ellipse cx="22" cy="29" rx="4" ry="2.5" fill="#F87171" opacity="0.7" />
+                <ellipse cx="44" cy="29" rx="4" ry="2.5" fill="#F87171" opacity="0.7" />
+                <path d="M 29 29 Q 33 35 37 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
 
-              {/* Proud Mother / Parent Smiling */}
-              <g transform="translate(380, 100)">
-                <circle cx="35" cy="28" r="24" fill="#FED7AA" stroke="#EA580C" strokeWidth="2" />
-                <circle cx="28" cy="25" r="3" fill="#1E293B" />
-                <circle cx="42" cy="25" r="3" fill="#1E293B" />
-                <path d="M 28 36 Q 35 44 42 36" stroke="#991B1B" strokeWidth="2.5" fill="none" />
-                {/* Dress */}
-                <path d="M 15 54 Q 10 120 5 140 L 65 140 Q 60 120 55 54 Z" fill="#EC4899" />
-                {/* Heart emoticon above parent */}
-                <path d="M 35 0 C 35 -10 20 -10 20 5 C 20 15 35 25 35 25 C 35 25 50 15 50 5 C 50 -10 35 -10 35 0 Z" fill="#EF4444" className="animate-pulse" />
+              {/* Bintang Apresiasi */}
+              <g transform="translate(390, 80)" className="animate-pulse">
+                <circle cx="15" cy="15" r="16" fill="#FEF08A" />
+                <text x="7" y="21" fill="#CA8A04" fontSize="16">✨</text>
               </g>
             </svg>
-            <div className="absolute bottom-2 left-4 px-3 py-1 bg-white/90 rounded-full text-xs font-bubble font-bold text-emerald-800 shadow-xs">
-              🧸 Rapikan mainan ke kotak & bantu orang tua
+            <div className="absolute bottom-2 left-3 px-3 py-1 bg-white/95 rounded-full text-xs font-bubble font-bold text-emerald-900 border border-emerald-300 shadow-xs">
+              🧸 Sore Hari Merapikan Mainan ke Dalam Kotak Mainan
             </div>
           </div>
         );
 
       case 'night':
         return (
-          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-indigo-900 via-indigo-950 to-slate-900 overflow-hidden border-2 border-indigo-400 flex items-center justify-center p-4">
-            <svg viewBox="0 0 500 300" className="w-full h-full">
-              {/* Crescent Moon & Twinkling Stars */}
-              <path d="M 75 40 A 25 25 0 1 0 100 65 A 20 20 0 1 1 75 40 Z" fill="#FDE047" className="animate-bounce-gentle" />
-              <circle cx="150" cy="45" r="3" fill="#FFFFFF" className="animate-ping" style={{ animationDuration: '2.5s' }} />
-              <circle cx="220" cy="30" r="2.5" fill="#FFFFFF" />
-              <circle cx="340" cy="50" r="3" fill="#FFFFFF" className="animate-ping" style={{ animationDuration: '3.5s' }} />
+          <div className="relative w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-indigo-950 via-slate-900 to-indigo-900 overflow-hidden border-2 border-indigo-400 flex items-center justify-center p-3">
+            <svg viewBox="0 0 450 260" className="w-full h-full">
+              {/* Dinding Kamar Malam & Lantai */}
+              <rect x="0" y="0" width="450" height="200" fill="#1E1B4B" />
+              <rect x="0" y="200" width="450" height="60" fill="#0F172A" />
+              <line x1="0" y1="200" x2="450" y2="200" stroke="#334155" strokeWidth="2" />
 
-              {/* Study Desk & Lamp */}
-              <g transform="translate(60, 130)">
-                {/* Desk */}
-                <rect x="0" y="45" width="110" height="40" rx="4" fill="#92400E" stroke="#78350F" strokeWidth="2" />
-                <rect x="10" y="85" width="12" height="35" fill="#78350F" />
-                <rect x="88" y="85" width="12" height="35" fill="#78350F" />
-                {/* Open Book */}
-                <polygon points="40,43 55,38 70,43 70,48 55,44 40,48" fill="#F8FAFC" stroke="#94A3B8" strokeWidth="1.5" />
-                {/* School Bag packed */}
-                <rect x="85" y="20" width="30" height="35" rx="6" fill="#0284C7" />
-                {/* Desk Lamp Glowing */}
-                <path d="M 15 45 L 25 15 L 35 15" stroke="#94A3B8" strokeWidth="3" fill="none" />
-                <polygon points="25,15 45,15 35,5" fill="#FACC15" />
-                <circle cx="35" cy="18" r="14" fill="#FEF08A" opacity="0.3" />
+              {/* Jendela Malam dengan Bulan Sabit & Bintang Berkelip */}
+              <g transform="translate(30, 20)">
+                <rect x="0" y="0" width="80" height="90" rx="8" fill="#020617" stroke="#475569" strokeWidth="4" />
+                <line x1="40" y1="0" x2="40" y2="90" stroke="#475569" strokeWidth="3" />
+                <line x1="0" y1="45" x2="80" y2="45" stroke="#475569" strokeWidth="3" />
+                {/* Bulan Sabit Emas */}
+                <path d="M 50 25 A 18 18 0 1 0 65 48 A 14 14 0 1 1 50 25 Z" fill="#FDE047" className="animate-bounce-gentle" />
+                <circle cx="20" cy="25" r="2" fill="#FFFFFF" className="animate-ping" style={{ animationDuration: '2.5s' }} />
+                <circle cx="25" cy="65" r="2.5" fill="#FFFFFF" />
               </g>
 
-              {/* Peaceful Sleeping Child in Bed */}
-              <g transform="translate(240, 140)">
-                {/* Cozy Bed */}
-                <rect x="0" y="25" width="180" height="55" rx="8" fill="#1E293B" stroke="#334155" strokeWidth="2" />
-                {/* Fluffy Blanket */}
-                <rect x="40" y="25" width="140" height="55" rx="8" fill="#6366F1" stroke="#4F46E5" strokeWidth="2" />
-                {/* Pillow */}
-                <rect x="10" y="15" width="45" height="25" rx="6" fill="#E2E8F0" />
-                {/* Peaceful Sleeping Child Head */}
-                <circle cx="35" cy="24" r="16" fill="#FED7AA" />
-                {/* Closed Eyes / Zzz */}
-                <path d="M 28 24 Q 32 28 36 24" stroke="#475569" strokeWidth="2" fill="none" />
-                <text x="50" y="10" fill="#A5B4FC" fontSize="16" fontWeight="bold" className="animate-float">Zzz...</text>
+              {/* Meja Belajar dengan Buku & Lampu Menyala */}
+              <g transform="translate(130, 110)">
+                <rect x="0" y="35" width="70" height="40" rx="4" fill="#78350F" />
+                <rect x="8" y="75" width="8" height="20" fill="#451A03" />
+                <rect x="54" y="75" width="8" height="20" fill="#451A03" />
+                {/* Buku Terbuka yang Telah Dipelajari */}
+                <polygon points="20,34 35,30 50,34 50,38 35,34 20,38" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1" />
+                {/* Tas Sekolah Siap untuk Besok */}
+                <rect x="2" y="15" width="22" height="24" rx="4" fill="#0284C7" />
+              </g>
+
+              {/* Tempat Tidur Hangat dengan Anak Tertidur Nyenyak */}
+              <g transform="translate(230, 115)">
+                {/* Sandaran Ranjang */}
+                <rect x="0" y="0" width="16" height="85" rx="6" fill="#78350F" />
+                {/* Kasur */}
+                <rect x="14" y="35" width="160" height="45" rx="8" fill="#312E81" stroke="#4338CA" strokeWidth="3" />
+                {/* Kaki Ranjang */}
+                <rect x="25" y="80" width="10" height="15" fill="#451A03" />
+                <rect x="155" y="80" width="10" height="15" fill="#451A03" />
+                {/* Bantal Lembut */}
+                <rect x="22" y="24" width="44" height="24" rx="6" fill="#E2E8F0" />
+                {/* Kepala Anak Tertidur Tenang (Mata Terpejam) */}
+                <circle cx="44" cy="36" r="18" fill="#FED7AA" />
+                <path d="M 28 32 C 28 20 60 20 60 32 Z" fill="#78350F" />
+                {/* Mata Terpejam Rileks */}
+                <path d="M 38 36 Q 41 39 44 36" stroke="#475569" strokeWidth="2" strokeLinecap="round" fill="none" />
+                <path d="M 48 36 Q 51 39 54 36" stroke="#475569" strokeWidth="2" strokeLinecap="round" fill="none" />
+                {/* Selimut Hangat Menutupi Badan */}
+                <rect x="52" y="35" width="122" height="45" rx="6" fill="#6366F1" stroke="#4F46E5" strokeWidth="2" />
+                {/* Tulisan Zzz Melayang Santai */}
+                <g className="animate-float">
+                  <text x="65" y="10" fill="#A5B4FC" fontSize="16" fontWeight="bold">Zzz...</text>
+                </g>
               </g>
             </svg>
-            <div className="absolute bottom-2 left-4 px-3 py-1 bg-white/90 rounded-full text-xs font-bubble font-bold text-indigo-950 shadow-xs">
-              🌙 Belajar, siapkan tas sekolah & tidur tepat waktu
+            <div className="absolute bottom-2 left-3 px-3 py-1 bg-white/95 rounded-full text-xs font-bubble font-bold text-indigo-950 border border-indigo-300 shadow-xs">
+              🌙 Belajar, Menyiapkan Tas Sekolah, & Tidur Tepat Waktu
             </div>
           </div>
         );
@@ -370,7 +436,7 @@ export default function Materi1Keluarga({ onNext, onPrev }) {
           </div>
         </div>
 
-        {/* Audio Narration Action Bar (Dengarkan, Ulangi, Selanjutnya as required by prompt) */}
+        {/* Audio Narration Action Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 mt-6 pt-5 border-t border-slate-100">
           <div className="flex items-center gap-2">
             <button
