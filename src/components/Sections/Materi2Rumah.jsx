@@ -46,73 +46,88 @@ export default function Materi2Rumah({ onNext, onPrev }) {
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-amber-50 to-orange-100 border-2 border-amber-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
               {/* Meja Makan */}
+              {/* Garis Lantai & Dinding */}
+              <rect x="0" y="0" width="450" height="195" fill="#FFFBEB" />
               <rect x="0" y="195" width="450" height="65" fill="#E2E8F0" />
-              <rect x="60" y="150" width="330" height="50" rx="8" fill="#CA8A04" stroke="#A16207" strokeWidth="3" />
-              <rect x="90" y="198" width="16" height="35" fill="#A16207" />
-              <rect x="340" y="198" width="16" height="35" fill="#A16207" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#CBD5E1" strokeWidth="2.5" />
 
-              {/* Piring Makanan di Meja */}
-              <ellipse cx="225" cy="150" rx="42" ry="14" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="2.5" />
-              <circle cx="225" cy="148" r="10" fill="#F97316" />
+              {/* Meja Makan Menapak Kokoh di Lantai Y = 195 */}
+              <ellipse cx="225" cy="195" rx="140" ry="8" fill="#94A3B8" opacity="0.4" />
+              <rect x="110" y="165" width="14" height="30" rx="3" fill="#A16207" />
+              <rect x="326" y="165" width="14" height="30" rx="3" fill="#A16207" />
+              <rect x="75" y="140" width="300" height="26" rx="6" fill="#CA8A04" stroke="#A16207" strokeWidth="3" />
+
+              {/* Piring Makanan di Atas Meja */}
+              <ellipse cx="225" cy="142" rx="42" ry="12" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="2.5" />
+              <circle cx="225" cy="140" r="9" fill="#F97316" />
               {/* Gelas Minum */}
-              <rect x="155" y="130" width="18" height="24" rx="4" fill="#BAE6FD" stroke="#0284C7" strokeWidth="1.5" />
+              <rect x="145" y="122" width="16" height="22" rx="4" fill="#BAE6FD" stroke="#0284C7" strokeWidth="1.5" />
 
               {isClean ? (
-                // SESUDAH TERTIB: Anak Duduk Rapi Berdoa dengan Khusyuk
+                // SESUDAH TERTIB: Anak Duduk Rapi Berdoa dengan Khusyuk di Kursi
                 <>
-                  {/* Kursi Makan */}
-                  <rect x="185" y="65" width="80" height="90" rx="6" fill="#D97706" opacity="0.4" />
-                  
-                  {/* Karakter Anak Duduk Santun Berdoa */}
-                  <g transform="translate(195, 45)" className="animate-bounce-gentle">
-                    {/* Badan Anak Baju Kuning */}
-                    <rect x="10" y="48" width="40" height="48" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="2" />
+                  {/* Kursi Makan Kayu Menapak di Lantai Y = 195 */}
+                  <rect x="195" y="75" width="60" height="70" rx="6" fill="#D97706" />
+                  <rect x="185" y="145" width="80" height="10" rx="3" fill="#B45309" />
+                  <rect x="190" y="155" width="10" height="40" rx="2" fill="#92400E" />
+                  <rect x="250" y="155" width="10" height="40" rx="2" fill="#92400E" />
+
+                  {/* Karakter Anak Duduk Santun Berdoa di Kursi */}
+                  <g transform="translate(195, 60)">
+                    {/* Badan Baju Kuning */}
+                    <rect x="12" y="44" width="36" height="42" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="2" />
+                    {/* Celana yang terlihat di kursi */}
+                    <rect x="14" y="84" width="32" height="16" rx="4" fill="#0284C7" />
                     
-                    {/* Kedua Tangan Menengadah Berdoa Bersama */}
-                    <path d="M 8 58 Q 20 72 25 68" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    <path d="M 52 58 Q 40 72 35 68" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    <ellipse cx="30" cy="67" rx="8" ry="6" fill="#FED7AA" />
+                    {/* Kedua Tangan Menengadah Berdoa di Atas Meja */}
+                    <path d="M 8 52 Q 20 66 26 62" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                    <path d="M 52 52 Q 40 66 34 62" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                    <ellipse cx="30" cy="62" rx="8" ry="6" fill="#FED7AA" />
 
                     {/* Kepala Anak */}
-                    <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                    {/* Rambut Rapi */}
-                    <path d="M 12 22 C 12 6 48 6 48 22 Q 40 14 30 14 Q 20 14 12 22 Z" fill="#78350F" />
+                    <circle cx="30" cy="22" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                    <path d="M 12 20 C 12 6 48 6 48 20 Q 40 12 30 12 Q 20 12 12 20 Z" fill="#78350F" />
                     
                     {/* Mata Terpejam Khusyuk Berdoa */}
-                    <path d="M 22 23 Q 25 27 28 23" stroke="#1E293B" strokeWidth="2" strokeLinecap="round" fill="none" />
-                    <path d="M 32 23 Q 35 27 38 23" stroke="#1E293B" strokeWidth="2" strokeLinecap="round" fill="none" />
-                    <ellipse cx="19" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                    <ellipse cx="41" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                    <path d="M 27 30 Q 30 33 33 30" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                    <path d="M 22 21 Q 25 25 28 21" stroke="#1E293B" strokeWidth="2" strokeLinecap="round" fill="none" />
+                    <path d="M 32 21 Q 35 25 38 21" stroke="#1E293B" strokeWidth="2" strokeLinecap="round" fill="none" />
+                    <ellipse cx="19" cy="26" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                    <ellipse cx="41" cy="26" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                    <path d="M 27 28 Q 30 31 33 28" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" fill="none" />
                   </g>
 
-                  {/* Cahaya Bersyukur / Berkah */}
+                  {/* Tanda Berdoa Penuh Syukur */}
                   <g className="animate-pulse">
-                    <text x="320" y="55" fill="#059669" fontSize="18" fontWeight="bold">✨ Berdoa</text>
+                    <text x="320" y="55" fill="#059669" fontSize="16" fontWeight="bold">✨ Berdoa</text>
                     <text x="315" y="75" fill="#047857" fontSize="11" fontWeight="bold">Penuh Syukur</text>
                   </g>
                 </>
               ) : (
-                // SEBELUM TERTIB: Makan Terburu-buru Tanpa Berdoa, Berantakan
+                // SEBELUM TERTIB: Makan Terburu-buru Tanpa Berdoa, Kursi Miring
                 <>
-                  <g transform="translate(195, 45)">
-                    <rect x="10" y="48" width="40" height="48" rx="8" fill="#F87171" stroke="#EF4444" strokeWidth="2" />
+                  <rect x="195" y="75" width="60" height="70" rx="6" fill="#D97706" />
+                  <rect x="185" y="145" width="80" height="10" rx="3" fill="#B45309" />
+                  <rect x="190" y="155" width="10" height="40" rx="2" fill="#92400E" />
+                  <rect x="250" y="155" width="10" height="40" rx="2" fill="#92400E" />
+
+                  <g transform="translate(195, 60)">
+                    <rect x="12" y="44" width="36" height="42" rx="8" fill="#F87171" stroke="#EF4444" strokeWidth="2" />
+                    <rect x="14" y="84" width="32" height="16" rx="4" fill="#0284C7" />
                     {/* Tangan Merebut Makanan Langsung */}
-                    <path d="M 10 58 L -10 95" stroke="#FED7AA" strokeWidth="9" strokeLinecap="round" />
-                    <circle cx="-10" cy="95" r="5" fill="#FED7AA" />
+                    <path d="M 10 52 L -10 82" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                    <circle cx="-10" cy="82" r="5" fill="#FED7AA" />
                     
                     {/* Kepala Anak */}
-                    <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                    <path d="M 12 22 C 12 6 48 6 48 22 Q 40 14 30 14 Q 20 14 12 22 Z" fill="#78350F" />
-                    {/* Mata Terbuka Lebar Tidak Sopan */}
-                    <circle cx="23" cy="23" r="3" fill="#1E293B" />
-                    <circle cx="37" cy="23" r="3" fill="#1E293B" />
-                    <ellipse cx="30" cy="32" rx="4" ry="5" fill="#B91C1C" />
+                    <circle cx="30" cy="22" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                    <path d="M 12 20 C 12 6 48 6 48 20 Q 40 12 30 12 Q 20 12 12 20 Z" fill="#78350F" />
+                    <circle cx="23" cy="21" r="3" fill="#1E293B" />
+                    <circle cx="37" cy="21" r="3" fill="#1E293B" />
+                    <ellipse cx="30" cy="30" rx="4" ry="4" fill="#B91C1C" />
                   </g>
                   {/* Tumpahan Air Minum */}
-                  <ellipse cx="160" cy="155" rx="18" ry="6" fill="#38BDF8" opacity="0.7" />
-                  <text x="290" y="60" fill="#DC2626" fontSize="15" fontWeight="bold">⚠️ Tanpa Berdoa</text>
-                  <text x="290" y="80" fill="#B91C1C" fontSize="11">Makan tergesa-gesa</text>
+                  <ellipse cx="145" cy="145" rx="18" ry="6" fill="#38BDF8" opacity="0.7" />
+                  <text x="290" y="55" fill="#DC2626" fontSize="15" fontWeight="bold">⚠️ Tanpa Berdoa</text>
+                  <text x="290" y="75" fill="#B91C1C" fontSize="11">Makan tergesa-gesa</text>
                 </>
               )}
             </svg>
@@ -123,68 +138,85 @@ export default function Materi2Rumah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-sky-100 to-teal-100 border-2 border-sky-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
-              {/* Wastafel Cuci Tangan */}
-              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
-              <rect x="70" y="130" width="160" height="45" rx="16" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="3" />
-              <rect x="140" y="175" width="22" height="40" fill="#CBD5E1" />
-              {/* Kran Air */}
-              <path d="M 150 70 L 150 95 Q 150 108 135 108" stroke="#64748B" strokeWidth="6" strokeLinecap="round" fill="none" />
+              {/* Dinding & Lantai (Garis Lantai Y = 195) */}
+              <rect x="0" y="0" width="450" height="195" fill="#F0FDFA" />
+              <rect x="0" y="195" width="450" height="65" fill="#E2E8F0" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#CBD5E1" strokeWidth="2.5" />
+
+              {/* Wastafel Cuci Tangan Berdiri di Lantai Y = 195 */}
+              <g transform="translate(100, 75)">
+                <ellipse cx="50" cy="120" rx="28" ry="5" fill="#94A3B8" opacity="0.5" />
+                <rect x="42" y="65" width="16" height="55" fill="#CBD5E1" stroke="#94A3B8" strokeWidth="1" />
+                <rect x="0" y="55" width="100" height="35" rx="12" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="3" />
+                {/* Kran Air */}
+                <path d="M 50 20 L 50 40 Q 50 50 35 50" stroke="#64748B" strokeWidth="6" strokeLinecap="round" fill="none" />
+                {isClean && (
+                  <line x1="35" y1="52" x2="35" y2="75" stroke="#38BDF8" strokeWidth="5" strokeLinecap="round" className="animate-water" />
+                )}
+              </g>
 
               {isClean ? (
-                // SESUDAH TERTIB: Anak Mencuci Tangan dengan Sabun dan Air Mengalir
+                // SESUDAH TERTIB: Anak Berdiri Kokoh di Lantai Y=195 Mencuci Tangan
                 <>
-                  {/* Air Mengalir */}
-                  <line x1="135" y1="110" x2="135" y2="148" stroke="#38BDF8" strokeWidth="5" strokeLinecap="round" className="animate-water" />
-                  
-                  {/* Karakter Anak Berdiri di Depan Wastafel */}
-                  <g transform="translate(245, 80)" className="animate-bounce-gentle">
-                    <rect x="14" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                    <rect x="34" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                    <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                    <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
-                    {/* Baju Anak */}
-                    <rect x="10" y="45" width="40" height="45" rx="8" fill="#34D399" stroke="#10B981" strokeWidth="2.5" />
-                    {/* Kedua Tangan Menggosok Sabun di Bawah Kran */}
-                    <path d="M 10 55 L -85 70" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    <path d="M 20 58 L -75 75" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    {/* Gumpalan Busa Putih & Bersih */}
-                    <circle cx="-85" cy="72" r="9" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
-                    <circle cx="-75" cy="75" r="8" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
+                  <g transform="translate(255, 75)">
+                    {/* Bayangan Kontak Kaki di Lantai */}
+                    <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                    {/* Sepatu & Kaki */}
+                    <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                    <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
 
-                    {/* Kepala Anak Ceria */}
-                    <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                    <path d="M 12 22 C 12 6 48 6 48 22 Q 40 14 30 14 Q 20 14 12 22 Z" fill="#78350F" />
-                    <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                    <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                    <path d="M 26 29 Q 30 35 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                    {/* Baju Anak Hijau Bersih */}
+                    <rect x="8" y="46" width="40" height="44" rx="8" fill="#34D399" stroke="#10B981" strokeWidth="2.5" />
+                    
+                    {/* Kedua Tangan Menjangkau Kran dan Menggosok Sabun */}
+                    <path d="M 8 56 L -90 70" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                    <path d="M 20 60 L -80 75" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                    {/* Busa Sabun Bersih */}
+                    <circle cx="-90" cy="72" r="9" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
+                    <circle cx="-80" cy="76" r="8" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.5" />
+
+                    {/* Leher & Kepala Anak */}
+                    <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                    <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                    <path d="M 10 22 C 10 6 46 6 46 22 Q 38 14 28 14 Q 18 14 10 22 Z" fill="#78350F" />
+                    <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                    <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                    <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                   </g>
 
                   {/* Gelembung Sabun Mengapung */}
-                  <circle cx="120" cy="100" r="7" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" />
-                  <circle cx="155" cy="95" r="5" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" style={{ animationDelay: '0.5s' }} />
+                  <circle cx="150" cy="95" r="7" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" />
+                  <circle cx="180" cy="90" r="5" fill="#E0F2FE" stroke="#38BDF8" strokeWidth="1.5" className="animate-bubble" style={{ animationDelay: '0.5s' }} />
 
-                  <text x="240" y="45" fill="#059669" fontSize="16" fontWeight="bold">✨ Tangan Bersih & Harum</text>
+                  <text x="220" y="45" fill="#059669" fontSize="16" fontWeight="bold">✨ Tangan Bersih & Harum</text>
                 </>
               ) : (
-                // SEBELUM TERTIB: Tangan Kotor Bernoda Abu-abu Sebelum Makan
+                // SEBELUM TERTIB: Tangan Kotor Bernoda Sebelum Makan
                 <>
-                  <g transform="translate(245, 80)">
-                    <rect x="10" y="45" width="40" height="45" rx="8" fill="#FBBF24" stroke="#D97706" strokeWidth="2" />
-                    {/* Tangan Hitam Kotor Menolak Wastafel */}
-                    <path d="M 10 55 L -45 55" stroke="#78350F" strokeWidth="9" strokeLinecap="round" />
-                    {/* Bintik Kuman 🦠 */}
-                    <circle cx="-50" cy="55" r="6" fill="#451A03" />
-                    <circle cx="-42" cy="62" r="3" fill="#DC2626" />
-                    <circle cx="-48" cy="48" r="3" fill="#DC2626" />
+                  <g transform="translate(255, 75)">
+                    <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                    <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                    <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+
+                    <rect x="8" y="46" width="40" height="44" rx="8" fill="#FBBF24" stroke="#D97706" strokeWidth="2" />
+                    {/* Tangan Hitam Kotor Menjauh dari Wastafel */}
+                    <path d="M 8 56 L -40 56" stroke="#78350F" strokeWidth="8" strokeLinecap="round" />
+                    <circle cx="-45" cy="56" r="6" fill="#451A03" />
+                    <circle cx="-38" cy="62" r="3" fill="#DC2626" />
+                    <circle cx="-42" cy="50" r="3" fill="#DC2626" />
                     
-                    {/* Kepala Anak Cemberut */}
-                    <circle cx="30" cy="24" r="22" fill="#FED7AA" />
-                    <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                    <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                    <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                    <path d="M 26 32 Q 30 27 34 32" stroke="#78350F" strokeWidth="2" strokeLinecap="round" fill="none" />
+                    <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                    <circle cx="28" cy="24" r="21" fill="#FED7AA" />
+                    <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                    <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                    <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                    <path d="M 24 31 Q 28 27 32 31" stroke="#78350F" strokeWidth="2" strokeLinecap="round" fill="none" />
                   </g>
-                  <text x="220" y="45" fill="#DC2626" fontSize="15" fontWeight="bold">❌ Tangan Penuh Kuman!</text>
+                  <text x="210" y="45" fill="#DC2626" fontSize="15" fontWeight="bold">❌ Tangan Penuh Kuman!</text>
                 </>
               )}
             </svg>
@@ -195,49 +227,59 @@ export default function Materi2Rumah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-purple-100 to-pink-100 border-2 border-purple-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
-              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
+              {/* Garis Lantai & Dinding (Y = 195) */}
+              <rect x="0" y="0" width="450" height="195" fill="#FAF5FF" />
+              <rect x="0" y="195" width="450" height="65" fill="#E2E8F0" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#CBD5E1" strokeWidth="2.5" />
               
-              {/* Kotak Mainan Rapi di Sisi Kiri */}
-              <g transform="translate(60, 110)">
-                <rect x="0" y="25" width="120" height="65" rx="8" fill="#F59E0B" stroke="#B45309" strokeWidth="3" />
-                <rect x="-4" y="15" width="128" height="14" rx="4" fill="#D97706" />
-                <text x="14" y="60" fill="#78350F" fontSize="11" fontWeight="bold">KOTAK MAINAN</text>
+              {/* Kotak Mainan Menapak di Lantai Y = 195 */}
+              <g transform="translate(60, 115)">
+                <ellipse cx="60" cy="80" rx="60" ry="6" fill="#94A3B8" opacity="0.5" />
+                <rect x="0" y="20" width="120" height="60" rx="8" fill="#F59E0B" stroke="#B45309" strokeWidth="3" />
+                <rect x="-4" y="10" width="128" height="14" rx="4" fill="#D97706" />
+                <text x="14" y="55" fill="#78350F" fontSize="11" fontWeight="bold">KOTAK MAINAN</text>
               </g>
 
               {isClean ? (
-                // SESUDAH TERTIB: Mainan Tersimpan Rapi & Lantai Bersih Lapang
+                // SESUDAH TERTIB: Mainan Tersimpan Rapi & Karakter Berpijak di Lantai Y=195
                 <>
-                  {/* Boneka & Mainan di Dalam Kotak */}
-                  <circle cx="95" cy="125" r="14" fill="#92400E" />
-                  <polygon points="140,115 150,135 130,135" fill="#3B82F6" />
+                  <circle cx="95" cy="120" r="14" fill="#92400E" />
+                  <polygon points="140,110 150,130 130,130" fill="#3B82F6" />
                   
-                  {/* Karakter Anak Berdiri Puas & Tersenyum */}
-                  <g transform="translate(260, 85)" className="animate-bounce-gentle">
-                    <rect x="14" y="85" width="12" height="30" rx="3" fill="#0284C7" />
-                    <rect x="34" y="85" width="12" height="30" rx="3" fill="#0284C7" />
-                    <ellipse cx="20" cy="115" rx="9" ry="5" fill="#1E293B" />
-                    <ellipse cx="40" cy="115" rx="9" ry="5" fill="#1E293B" />
-                    <rect x="10" y="45" width="40" height="42" rx="8" fill="#F472B6" stroke="#DB2777" strokeWidth="2.5" />
+                  {/* Karakter Berdiri di Lantai */}
+                  <g transform="translate(265, 75)">
+                    <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                    <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                    <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                    <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                    
+                    <rect x="8" y="46" width="40" height="44" rx="8" fill="#F472B6" stroke="#DB2777" strokeWidth="2.5" />
                     {/* Dua Tangan Melambai Bahagia */}
-                    <path d="M 10 55 L -10 40" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    <path d="M 50 55 L 70 40" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                    {/* Kepala */}
-                    <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                    <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                    <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                    <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                    <path d="M 26 29 Q 30 35 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                    <g className="animate-arm-wave">
+                      <path d="M 8 56 L -12 42" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                      <circle cx="-12" cy="42" r="5" fill="#FED7AA" />
+                    </g>
+                    <path d="M 48 56 L 68 42" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                    <circle cx="68" cy="42" r="5" fill="#FED7AA" />
+                    
+                    {/* Leher & Kepala */}
+                    <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                    <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                    <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                    <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                    <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                    <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                   </g>
                   <text x="210" y="45" fill="#059669" fontSize="16" fontWeight="bold">✨ Mainan Rapi di Tempatnya</text>
                 </>
               ) : (
-                // SEBELUM TERTIB: Mainan Berserakan di Seluruh Lantai, Bahaya Tersandung
+                // SEBELUM TERTIB: Mainan Berserakan di Seluruh Lantai
                 <>
-                  {/* Mainan Berserakan di Lantai */}
-                  <circle cx="230" cy="225" r="14" fill="#EF4444" stroke="#B91C1C" strokeWidth="2" />
-                  <polygon points="300,215 315,235 285,235" fill="#3B82F6" stroke="#1D4ED8" strokeWidth="2" />
-                  <rect x="350" y="215" width="24" height="20" rx="3" fill="#10B981" stroke="#047857" strokeWidth="2" />
-                  <circle cx="180" cy="228" r="10" fill="#FACC15" />
+                  <circle cx="230" cy="215" r="14" fill="#EF4444" stroke="#B91C1C" strokeWidth="2" />
+                  <polygon points="300,205 315,225 285,225" fill="#3B82F6" stroke="#1D4ED8" strokeWidth="2" />
+                  <rect x="350" y="205" width="24" height="20" rx="3" fill="#10B981" stroke="#047857" strokeWidth="2" />
+                  <circle cx="180" cy="218" r="10" fill="#FACC15" />
 
                   <text x="180" y="60" fill="#DC2626" fontSize="15" fontWeight="bold">⚠️ Mainan Berserakan di Lantai!</text>
                   <text x="180" y="80" fill="#991B1B" fontSize="12">Bisa membuat orang tersandung dan jatuh</text>
@@ -251,35 +293,59 @@ export default function Materi2Rumah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-blue-100 to-indigo-100 border-2 border-blue-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
+              {/* Garis Lantai & Dinding (Y = 195) */}
+              <rect x="0" y="0" width="450" height="195" fill="#EFF6FF" />
               <rect x="0" y="195" width="450" height="65" fill="#CBD5E1" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#94A3B8" strokeWidth="2.5" />
 
-              {/* Rangka Tempat Tidur */}
-              <g transform="translate(80, 95)">
-                <rect x="0" y="0" width="16" height="95" rx="6" fill="#92400E" />
-                <rect x="14" y="45" width="200" height="45" rx="8" fill="#38BDF8" stroke="#0284C7" strokeWidth="3" />
-                <rect x="25" y="90" width="12" height="15" fill="#78350F" />
-                <rect x="195" y="90" width="12" height="15" fill="#78350F" />
+              {/* Rangka Tempat Tidur Menapak Kokoh di Lantai Y = 195 */}
+              <g transform="translate(60, 95)">
+                <ellipse cx="115" cy="100" rx="110" ry="7" fill="#94A3B8" opacity="0.5" />
+                {/* Kepala Ranjang */}
+                <rect x="0" y="0" width="16" height="100" rx="6" fill="#92400E" />
+                {/* Kasur */}
+                <rect x="14" y="45" width="210" height="45" rx="8" fill="#38BDF8" stroke="#0284C7" strokeWidth="3" />
+                {/* Kaki Ranjang Menapak di Lantai Y = 195 (relatif Y = 100) */}
+                <rect x="25" y="90" width="12" height="10" fill="#78350F" />
+                <rect x="205" y="90" width="12" height="10" fill="#78350F" />
 
                 {isClean ? (
                   // SESUDAH TERTIB: Bantal Lurus & Selimut Terlipat Rapi
                   <>
                     <rect x="24" y="32" width="45" height="25" rx="6" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="2" />
-                    <rect x="75" y="45" width="139" height="45" rx="6" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
+                    <rect x="85" y="45" width="139" height="45" rx="6" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
                     <g className="animate-pulse">
-                      <polygon points="180,25 183,32 190,33 185,38 186,45 180,42 174,45 175,38 170,33 177,32" fill="#FACC15" />
+                      <polygon points="190,25 193,32 200,33 195,38 196,45 190,42 184,45 185,38 180,33 187,32" fill="#FACC15" />
                     </g>
                   </>
                 ) : (
                   // SEBELUM TERTIB: Kasur Kusut, Selimut Terlempar di Lantai
                   <>
-                    {/* Bantal Miring */}
                     <rect x="24" y="32" width="45" height="25" rx="6" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="2" transform="rotate(-15 24 32)" />
-                    {/* Selimut Kusut Menumpuk */}
-                    <path d="M 60 55 Q 90 35 120 60 Q 150 45 190 70 L 160 110 L 70 110 Z" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
-                    {/* Pakaian Tercecer di Lantai */}
-                    <ellipse cx="230" cy="115" rx="16" ry="8" fill="#FACC15" />
+                    <path d="M 60 55 Q 90 35 120 60 Q 150 45 190 70 L 160 100 L 70 100 Z" fill="#F472B6" stroke="#DB2777" strokeWidth="2" />
+                    <ellipse cx="230" cy="100" rx="16" ry="8" fill="#FACC15" />
                   </>
                 )}
+              </g>
+
+              {/* Karakter Anak Merapikan / Memeriksa Kamar */}
+              <g transform="translate(325, 75)">
+                <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+
+                <rect x="8" y="46" width="40" height="44" rx="8" fill={isClean ? "#34D399" : "#F87171"} stroke={isClean ? "#059669" : "#EF4444"} strokeWidth="2.5" />
+                <path d="M 8 56 L -15 65" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                <circle cx="-15" cy="65" r="5" fill="#FED7AA" />
+
+                <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                <path d={isClean ? "M 24 29 Q 28 34 32 29" : "M 24 32 Q 28 27 32 32"} stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
 
               {isClean ? (

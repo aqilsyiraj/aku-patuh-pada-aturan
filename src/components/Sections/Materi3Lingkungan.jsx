@@ -188,41 +188,45 @@ export default function Materi3Lingkungan({ onNext, onPrev }) {
                 {activeActIndex === 0 && (
                   // Aktivitas A: Membuang Sampah pada Tempatnya
                   <>
-                    {/* Tong Sampah Bersih Bertuliskan "SAMPAH" */}
-                    <g transform="translate(130, 115)">
-                      <rect x="0" y="25" width="75" height="80" rx="10" fill="#0284C7" stroke="#0369A1" strokeWidth="3.5" />
+                    {/* Tong Sampah Bersih Bertuliskan "SAMPAH" Menapak di Tanah */}
+                    <g transform="translate(125, 105)">
+                      <ellipse cx="37" cy="90" rx="42" ry="6" fill="#15803D" opacity="0.4" />
+                      <rect x="0" y="25" width="75" height="65" rx="8" fill="#0284C7" stroke="#0369A1" strokeWidth="3.5" />
                       {/* Tutup Terbuka */}
                       <path d="M -6 24 L 81 24 L 70 8 L 5 8 Z" fill="#38BDF8" stroke="#0369A1" strokeWidth="2.5" />
-                      <text x="12" y="70" fill="#FFFFFF" fontSize="12" fontWeight="bold">SAMPAH</text>
-                      <circle cx="37" cy="88" r="4" fill="#38BDF8" opacity="0.6" />
+                      <text x="12" y="65" fill="#FFFFFF" fontSize="12" fontWeight="bold">SAMPAH</text>
                     </g>
 
-                    {/* Karakter Anak Memasukkan Sampah ke Dalam Tong */}
-                    <g transform="translate(265, 80)" className="animate-bounce-gentle">
-                      <rect x="14" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <rect x="34" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                      <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
+                    {/* Karakter Anak Memasukkan Sampah - Berpijak di Tanah Y = 195 */}
+                    <g transform="translate(265, 75)">
+                      {/* Bayangan Kontak di Rumput */}
+                      <ellipse cx="28" cy="120" rx="24" ry="5" fill="#15803D" opacity="0.5" />
+                      {/* Sepatu & Kaki */}
+                      <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                      <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
                       
                       {/* Baju Anak Kuning Ceria */}
-                      <rect x="10" y="45" width="40" height="45" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="2.5" />
+                      <rect x="8" y="46" width="40" height="44" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="2.5" />
 
                       {/* Tangan Kiri Menjulur Memasukkan Sampah Kertas ke Tong */}
-                      <path d="M 10 55 L -60 62" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                      <path d="M 8 56 L -60 62" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
                       {/* Sampah Kertas/Bungkus Jatuh ke Tong */}
                       <polygon points="-68,68 -56,64 -60,78 -72,74" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1.5" className="animate-bounce" />
 
                       {/* Tangan Kanan di Pinggang */}
-                      <path d="M 50 55 Q 60 66 50 74" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" fill="none" />
+                      <path d="M 48 56 Q 58 68 48 76" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" fill="none" />
 
                       {/* Kepala Anak */}
-                      <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                      <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                      <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                      <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                      <ellipse cx="19" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <ellipse cx="41" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <path d="M 26 29 Q 30 35 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                      <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                      <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                      <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                      <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                      <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                      <ellipse cx="17" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <ellipse cx="39" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                     </g>
                     <text x="130" y="235" fill="#0369A1" fontSize="14" fontWeight="bold">✨ Buang Sampah Tepat ke Dalam Tong</text>
                   </>
@@ -232,43 +236,48 @@ export default function Materi3Lingkungan({ onNext, onPrev }) {
                   // Aktivitas B: Menyapu Halaman Rumah
                   <>
                     {/* Tumpukan Daun Kering di Halaman */}
-                    <g transform="translate(100, 195)">
+                    <g transform="translate(110, 182)">
                       <ellipse cx="30" cy="12" rx="20" ry="7" fill="#D97706" />
                       <ellipse cx="45" cy="10" rx="16" ry="6" fill="#B45309" />
                       <ellipse cx="18" cy="11" rx="14" ry="5" fill="#F59E0B" />
                     </g>
                     {/* Pengki (Serokan) Biru Menampung Daun */}
-                    <g transform="translate(70, 185)">
+                    <g transform="translate(75, 175)">
                       <polygon points="0,20 35,20 30,6 5,6" fill="#0284C7" stroke="#0369A1" strokeWidth="2" />
-                      <line x1="17" y1="6" x2="17" y2="-12" stroke="#64748B" strokeWidth="3" strokeLinecap="round" />
+                      <line x1="17" y1="6" x2="17" y2="-10" stroke="#64748B" strokeWidth="3" strokeLinecap="round" />
                     </g>
 
-                    {/* Karakter Anak Memegang Sapu Lidi Menyapu Daun */}
-                    <g transform="translate(225, 80)" className="animate-sweep">
-                      <rect x="14" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <rect x="34" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                      <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
+                    {/* Karakter Anak Berdiri Tegak di Tanah Y = 195 Memegang Sapu */}
+                    <g transform="translate(240, 75)">
+                      {/* Bayangan Kontak di Rumput */}
+                      <ellipse cx="28" cy="120" rx="24" ry="5" fill="#15803D" opacity="0.5" />
+                      {/* Sepatu & Kaki */}
+                      <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                      <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
                       
-                      <rect x="10" y="45" width="40" height="45" rx="8" fill="#34D399" stroke="#10B981" strokeWidth="2.5" />
+                      <rect x="8" y="46" width="40" height="44" rx="8" fill="#34D399" stroke="#10B981" strokeWidth="2.5" />
 
-                      {/* Gagang Sapu Lidi Panjang */}
-                      <line x1="12" y1="55" x2="-80" y2="125" stroke="#78350F" strokeWidth="5" strokeLinecap="round" />
-                      {/* Ijuk / Ujung Sapu Menyapu Daun */}
-                      <polygon points="-100,126 -65,126 -72,108 -90,108" fill="#FACC15" stroke="#D97706" strokeWidth="1.5" />
+                      {/* Gagang Sapu Lidi Panjang Menyapu di Tanah */}
+                      <g className="animate-sweep" style={{ transformOrigin: '20px 55px' }}>
+                        <line x1="15" y1="55" x2="-80" y2="120" stroke="#78350F" strokeWidth="5" strokeLinecap="round" />
+                        <polygon points="-100,120 -65,120 -72,102 -90,102" fill="#FACC15" stroke="#D97706" strokeWidth="1.5" />
+                      </g>
 
                       {/* Kedua Tangan Memegang Gagang Sapu */}
-                      <path d="M 12 55 L -20 72" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                      <path d="M 22 62 L -42 90" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                      <path d="M 8 56 L -20 70" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                      <path d="M 20 60 L -40 85" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
 
                       {/* Kepala Anak Ceria */}
-                      <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                      <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                      <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                      <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                      <ellipse cx="19" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <ellipse cx="41" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <path d="M 26 29 Q 30 35 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                      <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                      <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                      <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                      <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                      <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                      <ellipse cx="17" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <ellipse cx="39" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                     </g>
                     <text x="140" y="235" fill="#047857" fontSize="14" fontWeight="bold">🍂 Menyapu Daun Kering dengan Sapu</text>
                   </>
@@ -277,49 +286,49 @@ export default function Materi3Lingkungan({ onNext, onPrev }) {
                 {activeActIndex === 2 && (
                   // Aktivitas C: Merawat Tanaman
                   <>
-                    {/* Pot Bunga Cantik & Bunga Segar Mekar */}
-                    <g transform="translate(110, 130)">
-                      {/* Pot Tanah Liat */}
-                      <polygon points="15,72 55,72 65,35 5,35" fill="#B45309" stroke="#78350F" strokeWidth="2" />
-                      {/* Batang & Daun Hijau */}
+                    {/* Pot Bunga Cantik Menapak di Tanah */}
+                    <g transform="translate(115, 125)">
+                      <ellipse cx="35" cy="70" rx="30" ry="5" fill="#15803D" opacity="0.5" />
+                      <polygon points="15,70 55,70 65,35 5,35" fill="#B45309" stroke="#78350F" strokeWidth="2" />
                       <line x1="35" y1="35" x2="35" y2="5" stroke="#16A34A" strokeWidth="4" />
                       <ellipse cx="24" cy="20" rx="12" ry="6" fill="#22C55E" transform="rotate(-25 24 20)" />
                       <ellipse cx="46" cy="14" rx="12" ry="6" fill="#22C55E" transform="rotate(25 46 14)" />
-                      {/* Bunga Mekar Segar */}
                       <circle cx="35" cy="-2" r="14" fill="#F43F5E" className="animate-pulse" />
                       <circle cx="35" cy="-2" r="6" fill="#FDE047" />
                     </g>
 
-                    {/* Karakter Anak Memegang Ceret Penyiram Tanaman */}
-                    <g transform="translate(270, 80)" className="animate-bounce-gentle">
-                      <rect x="14" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <rect x="34" y="90" width="12" height="30" rx="3" fill="#0284C7" />
-                      <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                      <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
+                    {/* Karakter Anak Berdiri di Tanah Y = 195 Memegang Ceret */}
+                    <g transform="translate(265, 75)">
+                      {/* Bayangan Kontak di Rumput */}
+                      <ellipse cx="28" cy="120" rx="24" ry="5" fill="#15803D" opacity="0.5" />
+                      {/* Sepatu & Kaki */}
+                      <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                      <rect x="12" y="88" width="12" height="28" rx="3" fill="#0284C7" />
+                      <rect x="32" y="88" width="12" height="28" rx="3" fill="#0284C7" />
                       
-                      <rect x="10" y="45" width="40" height="45" rx="8" fill="#6366F1" stroke="#4F46E5" strokeWidth="2.5" />
+                      <rect x="8" y="46" width="40" height="44" rx="8" fill="#6366F1" stroke="#4F46E5" strokeWidth="2.5" />
 
-                      {/* Ceret Penyiram Air (Watering Can) */}
-                      <g transform="translate(-75, 45)">
+                      {/* Ceret Penyiram Air */}
+                      <g transform="translate(-70, 48)">
                         <ellipse cx="20" cy="20" rx="18" ry="14" fill="#0284C7" stroke="#0369A1" strokeWidth="2" />
                         <path d="M 4 14 L -15 6" stroke="#0284C7" strokeWidth="5" strokeLinecap="round" />
-                        {/* Gagang Ceret */}
                         <path d="M 12 6 Q 20 -4 28 6" stroke="#0369A1" strokeWidth="3" fill="none" />
-                        {/* Tetesan Air Memancur ke Tanaman */}
                         <line x1="-16" y1="8" x2="-35" y2="35" stroke="#38BDF8" strokeWidth="3" className="animate-water" />
                       </g>
 
                       {/* Tangan Memegang Ceret */}
-                      <path d="M 10 55 L -45 52" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                      <path d="M 8 56 L -40 54" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
 
                       {/* Kepala Anak */}
-                      <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                      <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                      <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                      <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                      <ellipse cx="19" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <ellipse cx="41" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                      <path d="M 26 29 Q 30 35 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                      <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                      <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                      <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                      <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                      <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                      <ellipse cx="17" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <ellipse cx="39" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                      <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                     </g>
                     <text x="140" y="235" fill="#15803D" fontSize="14" fontWeight="bold">🌸 Menyiram Tanaman Bunga agar Tumbuh Segar</text>
                   </>

@@ -44,36 +44,38 @@ export default function Materi4Sekolah({ onNext, onPrev }) {
                 <polygon points="12,20 48,30 12,40" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.5" />
               </g>
 
-              {/* Tiga Siswa SD Berbaris Tertib & Lurus (Seragam Merah Putih) */}
+              {/* Tiga Siswa SD Berbaris Tertib & Lurus (Seragam Merah Putih) Menapak di Tanah */}
               {[
                 { x: 130, delay: '0s' },
                 { x: 230, delay: '0.2s' },
                 { x: 330, delay: '0.4s' }
               ].map((student, i) => (
-                <g key={i} transform={`translate(${student.x}, 75)`} className="animate-bounce-gentle" style={{ animationDelay: student.delay }}>
-                  {/* Sepatu Hitam & Kaus Kaki Putih */}
-                  <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                  <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
-                  {/* Celana/Rok Merah SD */}
-                  <rect x="14" y="90" width="12" height="28" rx="3" fill="#DC2626" />
-                  <rect x="34" y="90" width="12" height="28" rx="3" fill="#DC2626" />
+                <g key={i} transform={`translate(${student.x}, 75)`}>
+                  {/* Bayangan Kontak di Tanah */}
+                  <ellipse cx="28" cy="120" rx="24" ry="5" fill="#15803D" opacity="0.5" />
+                  {/* Sepatu Hitam & Kaki */}
+                  <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                  <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                  <rect x="12" y="88" width="12" height="28" rx="3" fill="#DC2626" />
+                  <rect x="32" y="88" width="12" height="28" rx="3" fill="#DC2626" />
                   {/* Kemeja Putih Seragam SD */}
-                  <rect x="10" y="45" width="40" height="48" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
+                  <rect x="8" y="46" width="40" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
                   {/* Dasi Merah SD */}
-                  <polygon points="30,48 26,62 30,72 34,62" fill="#DC2626" />
+                  <polygon points="28,48 24,62 28,72 32,62" fill="#DC2626" />
 
                   {/* Lengan Lurus Rapi di Samping Badan (Sikap Sempurna) */}
-                  <path d="M 10 52 L 8 90" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
-                  <path d="M 50 52 L 52 90" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                  <path d="M 8 52 L 6 86" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                  <path d="M 48 52 L 50 86" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
 
-                  {/* Kepala Siswa Menghadap Depan Tertib */}
-                  <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                  <path d="M 12 22 C 12 6 48 6 48 22 Z" fill="#78350F" />
-                  <circle cx="24" cy="23" r="2.5" fill="#1E293B" />
-                  <circle cx="36" cy="23" r="2.5" fill="#1E293B" />
-                  <ellipse cx="19" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                  <ellipse cx="41" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
-                  <path d="M 26 29 Q 30 34 34 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                  {/* Leher & Kepala Siswa Menghadap Depan Tertib */}
+                  <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                  <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                  <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                  <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                  <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                  <ellipse cx="17" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                  <ellipse cx="39" cy="28" rx="3.5" ry="2" fill="#F87171" opacity="0.7" />
+                  <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
                 </g>
               ))}
 
@@ -86,54 +88,79 @@ export default function Materi4Sekolah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-amber-50 to-orange-50 border-2 border-amber-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
-              {/* Dinding Kelas & Lantai */}
-              <rect x="0" y="0" width="450" height="200" fill="#FEF3C7" opacity="0.6" />
-              <rect x="0" y="200" width="450" height="60" fill="#E2E8F0" />
+              {/* Dinding Kelas & Garis Lantai Y = 195 */}
+              <rect x="0" y="0" width="450" height="195" fill="#FEF3C7" opacity="0.6" />
+              <rect x="0" y="195" width="450" height="65" fill="#E2E8F0" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#CBD5E1" strokeWidth="2.5" />
 
               {/* Papan Tulis Kelas Hijau */}
-              <g transform="translate(30, 25)">
-                <rect x="0" y="0" width="160" height="100" rx="6" fill="#065F46" stroke="#78350F" strokeWidth="5" />
-                <text x="20" y="35" fill="#FEF08A" fontSize="13" fontWeight="bold">PELAJARAN</text>
-                <text x="20" y="60" fill="#FFFFFF" fontSize="11">✓ Belajar Tertib</text>
-                <text x="20" y="80" fill="#FFFFFF" fontSize="11">✓ Angkat Tangan</text>
+              <g transform="translate(25, 25)">
+                <rect x="0" y="0" width="150" height="100" rx="6" fill="#065F46" stroke="#78350F" strokeWidth="5" />
+                <text x="18" y="32" fill="#FEF08A" fontSize="12" fontWeight="bold">PELAJARAN</text>
+                <text x="18" y="55" fill="#FFFFFF" fontSize="10">✓ Belajar Tertib</text>
+                <text x="18" y="75" fill="#FFFFFF" fontSize="10">✓ Angkat Tangan</text>
               </g>
 
-              {/* Ibu Guru Menjelaskan di Samping Papan Tulis */}
-              <g transform="translate(205, 55)" className="animate-bounce-gentle">
-                <rect x="12" y="55" width="38" height="65" rx="8" fill="#0284C7" stroke="#0369A1" strokeWidth="2" />
+              {/* Ibu Guru Menjelaskan - Berdiri Menapak di Lantai Y = 195 */}
+              <g transform="translate(195, 65)">
+                {/* Bayangan Kontak Guru di Lantai */}
+                <ellipse cx="30" cy="130" rx="26" ry="6" fill="#94A3B8" opacity="0.6" />
+                {/* Sepatu & Rok Panjang Guru */}
+                <ellipse cx="22" cy="129" rx="10" ry="5" fill="#1E293B" />
+                <ellipse cx="38" cy="129" rx="10" ry="5" fill="#1E293B" />
+                <polygon points="12,70 48,70 54,128 6,128" fill="#0369A1" />
+                
+                {/* Baju / Blazer Guru */}
+                <rect x="12" y="44" width="36" height="30" rx="6" fill="#0284C7" stroke="#0369A1" strokeWidth="2" />
+                
                 {/* Tangan Kiri Menunjuk ke Papan Tulis */}
-                <path d="M 12 65 L -18 52" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
-                {/* Kepala Ibu Guru */}
-                <circle cx="31" cy="30" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                {/* Jilbab / Rambut Rapi */}
-                <path d="M 11 30 C 11 10 51 10 51 30 Z" fill="#0369A1" />
-                <circle cx="26" cy="30" r="2.5" fill="#1E293B" />
-                <circle cx="38" cy="30" r="2.5" fill="#1E293B" />
-                <path d="M 28 36 Q 32 41 36 36" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+                <path d="M 12 52 L -18 42" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                <circle cx="-18" cy="42" r="4.5" fill="#FED7AA" />
+                {/* Tangan Kanan Memegang Buku */}
+                <path d="M 48 52 L 40 70" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                <rect x="36" y="65" width="18" height="24" rx="3" fill="#F59E0B" />
+
+                {/* Leher & Kepala Ibu Guru */}
+                <rect x="25" y="36" width="10" height="10" fill="#FED7AA" rx="2" />
+                <circle cx="30" cy="24" r="20" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                {/* Jilbab Rapi */}
+                <path d="M 12 24 C 12 6 48 6 48 24 Z" fill="#0369A1" />
+                <circle cx="25" cy="24" r="2.5" fill="#1E293B" />
+                <circle cx="35" cy="24" r="2.5" fill="#1E293B" />
+                <path d="M 27 30 Q 30 35 33 30" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
 
-              {/* Murid Duduk Rapi di Meja Belajar Mengangkat Tangan */}
+              {/* Meja Belajar & Murid Duduk Rapi Menapak di Lantai Y = 195 */}
               <g transform="translate(310, 85)">
-                {/* Meja Belajar Kayu */}
-                <rect x="0" y="60" width="95" height="40" rx="4" fill="#92400E" stroke="#78350F" strokeWidth="2" />
-                <rect x="10" y="100" width="10" height="25" fill="#78350F" />
-                <rect x="75" y="100" width="10" height="25" fill="#78350F" />
-                {/* Buku Terbuka di Meja */}
-                <rect x="25" y="52" width="35" height="15" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1" rx="2" />
+                {/* Bayangan Kontak Meja & Kursi */}
+                <ellipse cx="50" cy="110" rx="45" ry="6" fill="#94A3B8" opacity="0.5" />
+                
+                {/* Kursi Belajar Kayu */}
+                <rect x="15" y="40" width="30" height="40" rx="4" fill="#B45309" />
+                <rect x="18" y="75" width="8" height="35" fill="#78350F" />
 
-                {/* Anak Duduk Sopan & Mengangkat Satu Tangan */}
-                <g transform="translate(20, -5)" className="animate-bounce-gentle">
-                  <rect x="10" y="40" width="35" height="35" rx="6" fill="#DC2626" />
+                {/* Murid Duduk di Kursi */}
+                <g transform="translate(15, 10)">
+                  <rect x="6" y="40" width="30" height="32" rx="6" fill="#DC2626" />
                   {/* Tangan Kanan Mengangkat Tinggi Sopan */}
-                  <path d="M 40 45 L 48 10" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
-                  <circle cx="48" cy="8" r="4.5" fill="#FED7AA" />
-                  {/* Kepala Murid Menghadap Guru */}
-                  <circle cx="26" cy="20" r="18" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                  <path d="M 12 18 C 12 6 40 6 40 18 Z" fill="#78350F" />
-                  <circle cx="20" cy="19" r="2" fill="#1E293B" />
-                  <circle cx="30" cy="19" r="2" fill="#1E293B" />
-                  <path d="M 22 25 Q 25 29 28 25" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                  <g className="animate-arm-wave">
+                    <path d="M 32 45 L 36 12" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                    <circle cx="36" cy="10" r="4.5" fill="#FED7AA" />
+                  </g>
+                  {/* Kepala Murid */}
+                  <circle cx="21" cy="24" r="17" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                  <path d="M 8 22 C 8 10 34 10 34 22 Z" fill="#78350F" />
+                  <circle cx="16" cy="23" r="2" fill="#1E293B" />
+                  <circle cx="26" cy="23" r="2" fill="#1E293B" />
+                  <path d="M 18 29 Q 21 33 24 29" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" fill="none" />
                 </g>
+
+                {/* Meja Belajar Kayu */}
+                <rect x="25" y="60" width="75" height="15" rx="3" fill="#92400E" stroke="#78350F" strokeWidth="2" />
+                <rect x="35" y="75" width="8" height="35" fill="#78350F" />
+                <rect x="85" y="75" width="8" height="35" fill="#78350F" />
+                {/* Buku Terbuka di Atas Meja */}
+                <rect x="45" y="52" width="35" height="12" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1" rx="2" />
               </g>
 
               <text x="110" y="235" fill="#B45309" fontSize="14" fontWeight="bold">🙋‍♂️ Mendengarkan Guru & Mengangkat Tangan saat Bertanya</text>
@@ -145,56 +172,73 @@ export default function Materi4Sekolah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-emerald-100 to-teal-50 border-2 border-emerald-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
-              {/* Dinding & Lantai Kelas */}
+              {/* Dinding & Garis Lantai Y = 195 */}
               <rect x="0" y="0" width="450" height="195" fill="#ECFDF5" />
               <rect x="0" y="195" width="450" height="65" fill="#CBD5E1" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#94A3B8" strokeWidth="2.5" />
 
-              {/* Papan Tulis Kelas yang Sedang Dihapus */}
-              <g transform="translate(30, 30)">
-                <rect x="0" y="0" width="130" height="80" rx="6" fill="#047857" stroke="#78350F" strokeWidth="4" />
-                {/* Siswa 1 Menghapus Papan Tulis */}
-                <g transform="translate(85, 30)" className="animate-wiggle">
-                  <rect x="0" y="0" width="22" height="12" rx="3" fill="#D97706" />
-                  <circle cx="10" cy="6" r="4" fill="#FED7AA" />
-                </g>
+              {/* Papan Tulis Kelas yang Dihapus */}
+              <g transform="translate(25, 25)">
+                <rect x="0" y="0" width="130" height="85" rx="6" fill="#047857" stroke="#78350F" strokeWidth="4" />
+                {/* Penghapus Papan */}
+                <rect x="95" y="35" width="20" height="12" rx="3" fill="#D97706" />
               </g>
 
-              {/* Siswa 1 yang Menghapus Papan Tulis */}
-              <g transform="translate(145, 60)" className="animate-bounce-gentle">
-                <rect x="10" y="65" width="30" height="55" rx="6" fill="#0284C7" />
-                <path d="M 10 75 L -25 45" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
-                <circle cx="25" cy="40" r="18" fill="#FED7AA" />
-                <path d="M 10 38 C 10 24 40 24 40 38 Z" fill="#78350F" />
-                <circle cx="20" cy="40" r="2" fill="#1E293B" />
-                <circle cx="30" cy="40" r="2" fill="#1E293B" />
-              </g>
-
-              {/* Siswa 2 Menyapu Lantai Kelas dengan Sapu */}
-              <g transform="translate(260, 80)" className="animate-sweep">
-                <rect x="14" y="85" width="12" height="30" rx="3" fill="#0284C7" />
-                <rect x="34" y="85" width="12" height="30" rx="3" fill="#0284C7" />
-                <ellipse cx="20" cy="115" rx="9" ry="5" fill="#1E293B" />
-                <ellipse cx="40" cy="115" rx="9" ry="5" fill="#1E293B" />
+              {/* Siswa 1 yang Menghapus Papan Tulis - Berdiri di Lantai Y = 195 */}
+              <g transform="translate(135, 75)">
+                <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <rect x="12" y="88" width="12" height="28" rx="3" fill="#DC2626" />
+                <rect x="32" y="88" width="12" height="28" rx="3" fill="#DC2626" />
                 
-                <rect x="10" y="45" width="40" height="42" rx="8" fill="#10B981" stroke="#059669" strokeWidth="2.5" />
+                <rect x="8" y="46" width="40" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
+                {/* Tangan Menghapus Papan Tulis */}
+                <path d="M 8 56 L -20 35" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                <circle cx="-20" cy="35" r="4.5" fill="#FED7AA" />
+
+                <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                <circle cx="22" cy="23" r="2.5" fill="#1E293B" />
+                <circle cx="34" cy="23" r="2.5" fill="#1E293B" />
+                <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
+              </g>
+
+              {/* Siswa 2 Menyapu Lantai Kelas - Berdiri di Lantai Y = 195 */}
+              <g transform="translate(255, 75)">
+                <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <rect x="12" y="88" width="12" height="28" rx="3" fill="#DC2626" />
+                <rect x="32" y="88" width="12" height="28" rx="3" fill="#DC2626" />
+                
+                <rect x="8" y="46" width="40" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
 
                 {/* Sapu Lantai Kelas */}
-                <line x1="10" y1="55" x2="-65" y2="115" stroke="#78350F" strokeWidth="4.5" strokeLinecap="round" />
-                <polygon points="-80,116 -50,116 -58,98 -72,98" fill="#FACC15" stroke="#D97706" strokeWidth="1.5" />
+                <g className="animate-sweep" style={{ transformOrigin: '15px 55px' }}>
+                  <line x1="12" y1="55" x2="-65" y2="120" stroke="#78350F" strokeWidth="4.5" strokeLinecap="round" />
+                  <polygon points="-80,120 -50,120 -58,102 -72,102" fill="#FACC15" stroke="#D97706" strokeWidth="1.5" />
+                </g>
 
-                <path d="M 10 55 L -25 75" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                <circle cx="30" cy="24" r="20" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
-                <path d="M 14 22 C 14 8 46 8 46 22 Z" fill="#78350F" />
-                <circle cx="24" cy="23" r="2" fill="#1E293B" />
-                <circle cx="36" cy="23" r="2" fill="#1E293B" />
+                <path d="M 8 56 L -25 75" stroke="#FED7AA" strokeWidth="7" strokeLinecap="round" />
+                <rect x="23" y="38" width="10" height="10" fill="#FED7AA" rx="2" />
+                <circle cx="28" cy="24" r="21" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 10 22 C 10 6 46 6 46 22 Z" fill="#78350F" />
+                <circle cx="22" cy="23" r="2" fill="#1E293B" />
+                <circle cx="34" cy="23" r="2" fill="#1E293B" />
+                <path d="M 24 29 Q 28 34 32 29" stroke="#B91C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
               </g>
 
-              {/* Siswa 3 Merapikan Buku di Meja */}
-              <g transform="translate(370, 105)">
-                <rect x="-10" y="45" width="65" height="35" rx="4" fill="#92400E" />
-                <rect x="5" y="35" width="25" height="12" rx="2" fill="#3B82F6" />
-                <circle cx="15" cy="18" r="15" fill="#FED7AA" />
-                <rect x="2" y="32" width="26" height="30" rx="5" fill="#EC4899" />
+              {/* Meja Guru & Buku Rapi di Sisi Kanan */}
+              <g transform="translate(365, 115)">
+                <ellipse cx="30" cy="80" rx="32" ry="5" fill="#94A3B8" opacity="0.5" />
+                <rect x="0" y="25" width="60" height="15" rx="3" fill="#92400E" />
+                <rect x="5" y="40" width="8" height="40" fill="#78350F" />
+                <rect x="47" y="40" width="8" height="40" fill="#78350F" />
+                {/* Buku & Vas Bunga */}
+                <rect x="10" y="12" width="22" height="14" rx="2" fill="#3B82F6" />
+                <rect x="36" y="5" width="14" height="20" rx="3" fill="#EC4899" />
               </g>
 
               <text x="120" y="235" fill="#047857" fontSize="14" fontWeight="bold">🤝 Bersama-sama Piket Membersihkan Kelas</text>
@@ -206,36 +250,42 @@ export default function Materi4Sekolah({ onNext, onPrev }) {
         return (
           <div className="w-full h-64 sm:h-72 rounded-2xl bg-gradient-to-b from-sky-100 to-indigo-100 border-2 border-sky-300 flex items-center justify-center p-3 relative overflow-hidden">
             <svg viewBox="0 0 450 260" className="w-full h-full">
-              {/* Lingkungan Sekolah Bersih */}
+              {/* Lingkungan Sekolah Bersih & Garis Lantai Y = 195 */}
               <rect x="0" y="0" width="450" height="195" fill="#F0F9FF" />
               <rect x="0" y="195" width="450" height="65" fill="#E2E8F0" />
+              <line x1="0" y1="195" x2="450" y2="195" stroke="#CBD5E1" strokeWidth="2.5" />
 
-              {/* Dua Tong Sampah Pilah Sekolah (Organik & Anorganik) */}
-              <g transform="translate(100, 105)">
+              {/* Dua Tong Sampah Pilah Sekolah Menapak di Tanah */}
+              <g transform="translate(90, 105)">
+                <ellipse cx="30" cy="90" rx="30" ry="6" fill="#94A3B8" opacity="0.4" />
+                <ellipse cx="100" cy="90" rx="30" ry="6" fill="#94A3B8" opacity="0.4" />
+
                 {/* Tong Hijau (Organik) */}
-                <rect x="0" y="20" width="55" height="70" rx="8" fill="#16A34A" stroke="#15803D" strokeWidth="3" />
-                <text x="7" y="60" fill="#FFFFFF" fontSize="9" fontWeight="bold">ORGANIK</text>
+                <rect x="0" y="25" width="60" height="65" rx="8" fill="#16A34A" stroke="#15803D" strokeWidth="3" />
+                <text x="9" y="62" fill="#FFFFFF" fontSize="9" fontWeight="bold">ORGANIK</text>
 
                 {/* Tong Kuning (Anorganik / Daur Ulang) */}
-                <rect x="70" y="20" width="55" height="70" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="3" />
-                <text x="73" y="60" fill="#713F12" fontSize="9" fontWeight="bold">ANORGANIK</text>
+                <rect x="70" y="25" width="60" height="65" rx="8" fill="#FACC15" stroke="#EAB308" strokeWidth="3" />
+                <text x="73" y="62" fill="#713F12" fontSize="9" fontWeight="bold">ANORGANIK</text>
               </g>
 
-              {/* Siswa Memasukkan Botol Plastik ke Tong Kuning */}
-              <g transform="translate(295, 80)" className="animate-bounce-gentle">
-                <rect x="14" y="90" width="12" height="30" rx="3" fill="#DC2626" />
-                <rect x="34" y="90" width="12" height="30" rx="3" fill="#DC2626" />
-                <ellipse cx="20" cy="120" rx="9" ry="5" fill="#1E293B" />
-                <ellipse cx="40" cy="120" rx="9" ry="5" fill="#1E293B" />
+              {/* Siswa Memasukkan Botol Plastik - Berpijak di Tanah Y = 195 */}
+              <g transform="translate(285, 75)">
+                {/* Bayangan Kontak Siswa */}
+                <ellipse cx="28" cy="120" rx="24" ry="5" fill="#94A3B8" opacity="0.6" />
+                <ellipse cx="18" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <ellipse cx="38" cy="119" rx="10" ry="5" fill="#1E293B" />
+                <rect x="12" y="88" width="12" height="28" rx="3" fill="#DC2626" />
+                <rect x="32" y="88" width="12" height="28" rx="3" fill="#DC2626" />
                 
                 {/* Seragam SD */}
-                <rect x="10" y="45" width="40" height="48" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
-                <polygon points="30,48 26,62 30,72 34,62" fill="#DC2626" />
+                <rect x="8" y="46" width="40" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2" />
+                <polygon points="28,48 24,62 28,72 32,62" fill="#DC2626" />
 
                 {/* Tangan Kiri Menjulur Memasukkan Botol ke Tong Kuning */}
-                <path d="M 10 55 L -60 55" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
-                {/* Botol Plastik Biru Transparan */}
-                <rect x="-68" y="50" width="10" height="22" rx="3" fill="#38BDF8" stroke="#0284C7" strokeWidth="1" className="animate-bounce" />
+                <path d="M 8 56 L -65 65" stroke="#FED7AA" strokeWidth="8" strokeLinecap="round" />
+                {/* Botol Plastik Daur Ulang */}
+                <rect x="-75" y="60" width="10" height="18" rx="2" fill="#38BDF8" stroke="#0284C7" strokeWidth="1" className="animate-bounce" />
 
                 {/* Kepala Siswa */}
                 <circle cx="30" cy="24" r="22" fill="#FED7AA" stroke="#FDBA74" strokeWidth="1.5" />
