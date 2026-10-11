@@ -266,6 +266,34 @@ export default function Beranda({ onStartLearning, onOpenHelp, onNavigate }) {
             </div>
           </div>
         </div>
+
+        {/* Tim Pengembang & Penyusun Section Card */}
+        <div className="mt-8 bg-white/90 backdrop-blur rounded-3xl p-5 sm:p-6 border-3 border-amber-300 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 flex items-center justify-center text-2xl shadow-sm border border-amber-400 flex-shrink-0">
+              🎓
+            </div>
+            <div>
+              <span className="text-[11px] font-bubble font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 uppercase tracking-wider">
+                Tim Pengembang Media
+              </span>
+              <h3 className="font-bubble font-bold text-slate-800 text-base sm:text-lg mt-0.5">
+                Pengembang & Penyusun Materi
+              </h3>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 text-xs sm:text-sm font-reading font-semibold text-slate-700">
+            <div className="bg-amber-50 px-4 py-2 rounded-2xl border border-amber-200 text-center sm:text-left">
+              <p className="font-bubble font-bold text-slate-800">SETIA HELLENA PUTRI</p>
+              <p className="text-xs text-amber-800 font-mono font-bold mt-0.5">NIM: 250210204007</p>
+            </div>
+            <div className="bg-emerald-50 px-4 py-2 rounded-2xl border border-emerald-200 text-center sm:text-left">
+              <p className="font-bubble font-bold text-slate-800">SURINA WIKDA U. L. R.</p>
+              <p className="text-xs text-emerald-800 font-mono font-bold mt-0.5">NIM: 250210204065</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

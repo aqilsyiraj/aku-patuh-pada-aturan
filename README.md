@@ -1,6 +1,10 @@
 # 🌟 “Aku Patuh pada Aturan: Mengenal Aturan di Rumah dan di Sekolah”
 ### Media Pembelajaran Interaktif untuk Siswa Usia Dini & Sekolah Dasar Kelas Rendah
 
+**Tim Pengembang & Penyusun:**
+- **SETIA HELLENA PUTRI** (NIM: `250210204007`)
+- **SURINA WIKDA U. L. R.** (NIM: `250210204065`)
+
 ---
 
 ## 📖 Tentang Proyek

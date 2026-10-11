@@ -125,17 +125,30 @@ export default function App() {
       </main>
 
       {/* Cheerful Kids Footer */}
-      <footer className="bg-white/90 border-t-2 border-amber-200 py-6 text-center text-xs font-reading text-slate-600 no-print">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">🌟</span>
-            <span className="font-bubble font-bold text-slate-800">
-              Aku Patuh pada Aturan
-            </span>
-            <span>— Media Edukasi Karakter Anak Indonesia</span>
+      <footer className="bg-white/95 border-t-2 border-amber-200 py-6 text-xs font-reading text-slate-600 no-print">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+              <span className="text-lg">🌟</span>
+              <span className="font-bubble font-bold text-slate-800 text-sm">
+                Aku Patuh pada Aturan
+              </span>
+              <span className="text-slate-500">— Media Edukasi Karakter Anak</span>
+            </div>
+            <p className="text-slate-500 text-[11px]">
+              Dirancang dengan penuh kasih sayang untuk siswa usia dini & sekolah dasar kelas rendah.
+            </p>
           </div>
-          <div className="text-slate-500 font-reading">
-            Dirancang dengan penuh kasih sayang untuk siswa usia dini & sekolah dasar kelas rendah.
+
+          {/* Tim Pengembang */}
+          <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-2.5 px-4 text-center md:text-right shadow-xs">
+            <p className="font-bubble font-bold text-amber-900 text-xs mb-1">
+              🎓 Tim Pengembang & Penyusun:
+            </p>
+            <div className="space-y-0.5 text-slate-700 font-reading text-[11px] font-semibold">
+              <p>• SETIA HELLENA PUTRI <span className="text-amber-700 font-mono font-bold">(250210204007)</span></p>
+              <p>• SURINA WIKDA U. L. R. <span className="text-amber-700 font-mono font-bold">(250210204065)</span></p>
+            </div>
           </div>
         </div>
       </footer>

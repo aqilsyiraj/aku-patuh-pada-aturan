@@ -204,6 +204,14 @@ export default function Penutup({ onLearnAgain, onPlayQuiz, onBackToHome }) {
               </div>
             </div>
 
+            {/* Tim Pengembang Certificate Footer */}
+            <div className="mt-6 pt-3 border-t border-amber-200/80 text-center font-reading text-[11px] text-slate-600">
+              <span className="font-bubble font-bold text-slate-700">Tim Pengembang & Penyusun:</span>
+              <p className="font-semibold text-slate-800 mt-0.5">
+                SETIA HELLENA PUTRI <span className="font-mono text-amber-700 font-bold">(250210204007)</span> &bull; SURINA WIKDA U. L. R. <span className="font-mono text-amber-700 font-bold">(250210204065)</span>
+              </p>
+            </div>
+
             {/* Print Button */}
             <div className="mt-8 no-print flex justify-center gap-3">
               <button
